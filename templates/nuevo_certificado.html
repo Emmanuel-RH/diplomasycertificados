@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Certificado</title>
+</head>
+<body>
+    <h1>Añadir Nuevo Certificado</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+        {% for category, message in messages %}
+          <li style="color: {% if category == 'error' %}red{% else %}green{% endif %};">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form method="POST">
+        <label>Nombre del estudiante:</label><br>
+        <input type="text" name="nombre_estudiante" required><br><br>
+
+        <label>Curso:</label><br>
+        <input type="text" name="curso" required><br><br>
+
+        <label>Fecha de emisión:</label><br>
+        <input type="date" name="fecha_emision" required><br><br>
+
+        <label>Institución:</label><br>
+        <input type="text" name="institucion" required><br><br>
+
+        <label>ID del certificado:</label><br>
+        <input type="text" name="id_certificado" required><br><br>
+
+        <label>Calificación:</label><br>
+        <input type="text" name="calificacion" required><br><br>
+
+        <label>Duración:</label><br>
+        <input type="text" name="duracion" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <button type="submit">Añadir Certificado</button>
+    </form>
+    <p><a href="/">Volver al inicio</a></p>
+</body>
+</html>

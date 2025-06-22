@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificar Certificado</title>
+</head>
+<body>
+    <h1>Verificar un Certificado</h1>
+    <form method="POST">
+        <label for="id_certificado">ID del Certificado:</label>
+        <input type="text" id="id_certificado" name="id_certificado" required>
+        <button type="submit">Verificar</button>
+    </form>
+    {% if resultado %}
+        {% if resultado[0] == "válido" %}
+            <h2>Certificado válido</h2>
+            <ul>
+                <li><b>ID:</b> {{ resultado[1]['id_certificado'] }}</li>
+                <li><b>Estudiante:</b> {{ resultado[1]['nombre_estudiante'] }}</li>
+                <li><b>Curso:</b> {{ resultado[1]['curso'] }}</li>
+                <li><b>Institución:</b> {{ resultado[1]['institucion'] }}</li>
+                <li><b>Calificación:</b> {{ resultado[1]['calificacion'] }}</li>
+                <li><b>Duración:</b> {{ resultado[1]['duracion'] }}</li>
+                <li><b>Email:</b> {{ resultado[1]['email'] }}</li>
+                <li><b>Fecha:</b> {{ resultado[1]['fecha_emision'] }}</li>
+            </ul>
+        {% elif resultado[0] == "anulado" %}
+            <h2 style="color:red;">Certificado ANULADO</h2>
+            <ul>
+                <li><b>ID:</b> {{ resultado[1]['id_certificado'] }}</li>
+                <li><b>Estudiante:</b> {{ resultado[1]['nombre_estudiante'] }}</li>
+                <li><b>Curso:</b> {{ resultado[1]['curso'] }}</li>
+                <li><b>Institución:</b> {{ resultado[1]['institucion'] }}</li>
+                <li><b>Calificación:</b> {{ resultado[1]['calificacion'] }}</li>
+                <li><b>Duración:</b> {{ resultado[1]['duracion'] }}</li>
+                <li><b>Email:</b> {{ resultado[1]['email'] }}</li>
+                <li><b>Fecha:</b> {{ resultado[1]['fecha_emision'] }}</li>
+            </ul>
+        {% else %}
+            <h2 style="color:red;">Certificado no encontrado</h2>
+        {% endif %}
+    {% endif %}
+    <p><a href="/">Volver al inicio</a></p>
+</body>
+</html>

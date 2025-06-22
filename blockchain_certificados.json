@@ -1,0 +1,88 @@
+[
+    {
+        "index": 0,
+        "previous_hash": "0",
+        "timestamp": 1750615819.3288555,
+        "certificate_data": {
+            "nombre_estudiante": "GENESIS",
+            "curso": "GENESIS",
+            "fecha_emision": "GENESIS",
+            "institucion": "GENESIS",
+            "id_certificado": "GENESIS",
+            "calificacion": "GENESIS",
+            "duracion": "GENESIS",
+            "email": "GENESIS"
+        },
+        "nonce": 0,
+        "hash": "146eb7520a8b9017fc02e6ab0aa5681c85bd412b94a055a92d41dca949f4b368"
+    },
+    {
+        "index": 1,
+        "previous_hash": "146eb7520a8b9017fc02e6ab0aa5681c85bd412b94a055a92d41dca949f4b368",
+        "timestamp": 1750615819.3288555,
+        "certificate_data": {
+            "nombre_estudiante": "Emmanuel Rodríguez",
+            "curso": "Python Básico",
+            "fecha_emision": "2025-06-22",
+            "institucion": "Universidad Ejemplo",
+            "id_certificado": "CERT-0001",
+            "calificacion": "A+",
+            "duracion": "40 horas",
+            "email": "emmanuel@ejemplo.com"
+        },
+        "nonce": 0,
+        "hash": "b7763041a669d06a214644c5445fe318880a11db9452edc76cf1ec1c02838e54"
+    },
+    {
+        "index": 2,
+        "previous_hash": "b7763041a669d06a214644c5445fe318880a11db9452edc76cf1ec1c02838e54",
+        "timestamp": 1750615819.3288555,
+        "certificate_data": {
+            "nombre_estudiante": "Laura Méndez",
+            "curso": "Introducción a Blockchain",
+            "fecha_emision": "2025-06-22",
+            "institucion": "Instituto Digital",
+            "id_certificado": "CERT-0002",
+            "calificacion": "A",
+            "duracion": "30 horas",
+            "email": "laura@ejemplo.com",
+            "anulado": true
+        },
+        "nonce": 0,
+        "hash": "68a2930ab6fc7e63fc49cb9c1cf2a0f5464d84319d7dbc5fd03e1395eb17bdec"
+    },
+    {
+        "index": 3,
+        "previous_hash": "68a2930ab6fc7e63fc49cb9c1cf2a0f5464d84319d7dbc5fd03e1395eb17bdec",
+        "timestamp": 1750616437.7648914,
+        "certificate_data": {
+            "nombre_estudiante": "José Emmanuel Reyes Hernández",
+            "curso": "Blockchain",
+            "fecha_emision": "2025-06-22",
+            "institucion": "Universidad Veracruzana",
+            "id_certificado": "CERT-0003",
+            "calificacion": "10",
+            "duracion": "1 Mes",
+            "email": "emmanuel_rh@icloud.com"
+        },
+        "nonce": 0,
+        "hash": "6dd52cbb893d2b2b8e81646972a52c79972199b42c38e1fe10779cc2ee25e0e3"
+    },
+    {
+        "index": 4,
+        "previous_hash": "6dd52cbb893d2b2b8e81646972a52c79972199b42c38e1fe10779cc2ee25e0e3",
+        "timestamp": 1750616649.9009998,
+        "certificate_data": {
+            "nombre_estudiante": "Marianito Mendez Moreno",
+            "curso": "Inteligencia Artificial",
+            "fecha_emision": "2025-05-20",
+            "institucion": "Universidad Veracruzana",
+            "id_certificado": "UV-000",
+            "calificacion": "10",
+            "duracion": "20 días",
+            "email": "mendezmor@gmail.com"
+        },
+        "nonce": 0,
+        "hash": "3d660aa5ce121ae2ccbce2e2b37017c5c5f879e64a830fa21945dd497908b7f5"
+    }
+]

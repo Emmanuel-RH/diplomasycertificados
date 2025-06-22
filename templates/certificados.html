@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Certificados emitidos</title>
+</head>
+<body>
+    <h1>Certificados en la Blockchain</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+        {% for category, message in messages %}
+          <li style="color: {% if category == 'error' %}red{% else %}green{% endif %};">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Estudiante</th>
+            <th>Curso</th>
+            <th>Institución</th>
+            <th>Calificación</th>
+            <th>Duración</th>
+            <th>Email</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Acción</th>
+        </tr>
+        {% for block in chain %}
+        <tr>
+            <td>{{ block.certificate_data['id_certificado'] }}</td>
+            <td>{{ block.certificate_data['nombre_estudiante'] }}</td>
+            <td>{{ block.certificate_data['curso'] }}</td>
+            <td>{{ block.certificate_data['institucion'] }}</td>
+            <td>{{ block.certificate_data['calificacion'] }}</td>
+            <td>{{ block.certificate_data['duracion'] }}</td>
+            <td>{{ block.certificate_data['email'] }}</td>
+            <td>{{ block.certificate_data['fecha_emision'] }}</td>
+            <td>
+                {% if block.certificate_data['anulado'] %}
+                    <span style="color:red;">Anulado</span>
+                {% else %}
+                    <span style="color:green;">Válido</span>
+                {% endif %}
+            </td>
+            <td>
+                {% if not block.certificate_data['anulado'] %}
+                <form action="{{ url_for('anular_certificado', id_certificado=block.certificate_data['id_certificado']) }}" method="post" style="display:inline;">
+                  <button type="submit" onclick="return confirm('¿Estás seguro de anular este certificado?');">Anular</button>
+                </form>
+                {% else %}
+                  <span style="color:gray;">-</span>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><a href="/">Volver al inicio</a></p>
+</body>
+</html>
